@@ -1,12 +1,88 @@
-# React + Vite
+# Movie Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Movie Explorer is a React + Vite web app that lets users search movies through The Movie Database (TMDB) API and save favorites using Redux with `localStorage` persistence.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Search movies from TMDB in real time.
+- Browse results with posters, titles, and release dates.
+- Add movies to a favorites list.
+- Remove movies from favorites.
+- Favorites persist in the browser via `localStorage`.
+- Client-side navigation with React Router.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 19
+- Vite 7
+- Redux Toolkit + React Redux
+- React Router DOM
+- Tailwind CSS
+
+## Project Structure
+
+```text
+src/
+  component/
+    Header.jsx
+    SearchBar.jsx
+    Moviecard.jsx
+    Favmovie.jsx
+    Login.jsx
+    Signup.jsx
+  redux/
+    CreateSlice.js
+    store.js
+  App.jsx
+  Layout.jsx
+  main.jsx
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ (recommended)
+- npm
+
+### Installation
+
+```bash
+npm install
+```
+
+### Run in Development
+
+```bash
+npm run dev
+```
+
+Then open the local URL shown by Vite (typically `http://localhost:5173`).
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Available Routes
+
+- `/` — Home/Search page
+- `/favmovie` — Favorite movies
+- `/login` — Login page
+- `/Signup` — Signup page
+
+## Notes
+
+- The app currently calls TMDB directly from the frontend using an API key in source.
+- For production apps, move secrets to environment variables and call APIs through a backend.
+
+## License
+
+This project is currently unlicensed.
