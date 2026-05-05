@@ -1,12 +1,80 @@
-# React + Vite
+# Movie Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Movie Explorer is a React + Vite web app for browsing movies, searching titles, and managing a favorites list.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Search and browse movie content from the home page.
+- Add movies to a favorites list.
+- Remove movies from favorites.
+- Favorites are persisted in `localStorage` so they remain after page refresh.
+- Client-side routing for Home, Favorites, Login, and Signup pages.
+- Global state management with Redux Toolkit.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 19
+- Vite 7
+- React Router
+- Redux Toolkit + React Redux
+- Tailwind CSS 4
+
+## Project Structure
+
+```text
+src/
+  component/
+    Header.jsx
+    Moviecard.jsx
+    SearchBar.jsx
+    Favmovie.jsx
+    Login.jsx
+    Signup.jsx
+  redux/
+    CreateSlice.js
+    store.js
+  App.jsx
+  Layout.jsx
+  main.jsx
+```
+
+## Getting Started
+
+### 1) Prerequisites
+
+- Node.js 18+ (recommended: latest LTS)
+- npm
+
+### 2) Install dependencies
+
+```bash
+npm install
+```
+
+### 3) Run development server
+
+```bash
+npm run dev
+```
+
+Then open the local URL shown in your terminal (typically `http://localhost:5173`).
+
+## Available Scripts
+
+- `npm run dev` — start development server
+- `npm run build` — create production build
+- `npm run preview` — preview production build locally
+- `npm run lint` — run ESLint
+
+## Favorites Persistence
+
+Favorites are saved in browser `localStorage` under the key:
+
+- `favmovie`
+
+This is handled in the Redux slice (`src/redux/CreateSlice.js`) when adding/removing items.
+
+## Notes
+
+- This project currently focuses on front-end behavior and local persistence.
+- If you plan to connect a real movie API, add your API integration inside the search/listing components and keep secret keys in environment variables.
